@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html >
+{% load static %}
+
+    <head>
+            <link rel="stylesheet"  type= "text/css" href="{% static 'css/shift.css' %}">
+
+    </head>
+
+    <body background ="{%static 'img/dimaa_shkofa2.gif' %}" alt="back">
+            <table id="personal_display">
+
+            </table>
+            <form method="post" >
+
+                {{ form_as.p }}
+            </form>
+            <header>
+                <p class = "proj">
+                   <img src="{%static 'img/logo_no_back.gif' %}"  alt="Project logo"/>
+                </p>
+            </header>
+
+
+                <h1  style="color: yellow">{{ emp.first_name}} {{ emp.last_name }}</h1>
+
+                <div class = "shift_details">
+                    <h3 style="color: yellow">shift type , shift time, shift date , all from database </h3>
+                </div>
+
+
+
+                <table id="t1">
+                    <tr>
+                        <th>start_break</th>
+                        <th>end_break</th>
+                    </tr>
+                    <tr>
+                             <td>
+
+                                {{ emp.start_break }}
+                             </td>
+                             <td>
+                                {{ emp.end_break }}
+
+
+                             </td>
+                         </tr>
+                    <tr>
+                        <td>
+                              {{ emp.start_refreshment }}
+                        </td>
+                        <td>
+                            {{ emp.end_refreshment }}
+                        </td>
+                    </tr>
+                </table>
+
+
+
+                <table id="t2">
+                    <tr>
+                        <th>Boarding Time</th>
+                        <th>Depature Time</th>
+                        <th>Dest Name</th>
+                    </tr>
+                    <tr>
+                    {% for key,value in emp.items %}
+                    {% if key != "start_break" and key != "end_break" and key != "first_name" and key != "last_name" %}
+                    <tr>
+                         <td>
+                             {{ value.start }}
+                         </td>
+                         <td>
+                             {{ value.end }}
+                         </td>
+
+                         <td>
+                                {% with y=forloop.counter0 %}
+                                {{ value.forloop.counter0}}
+                                {% endwith %}
+
+
+                         </td>
+
+                    </tr>
+                    {% endif %}
+                    {% endfor %}
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                </table>
+    </body>
+
+
+</html>
+
+
+
+<!--
+<!DOCTYPE html>
+
+<html lang="en">
+{% load static %}
+
+
+
+    <link rel="stylesheet"  type= "text/css" href="{% static 'css/shift.css' %}">
+
+    <link href="https://fonts.googleapis.com/css?family=Archivo Black" rel="stylesheet">
+    <link href="https://fonts.googleapis.gacom/css?family=Cutive" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width>
+    <title>  Shift Display </title>
+
+</head>
+
+<body background ="{%static 'img/logo.gif' %}" alt="back" >
+    <header>
+        <p class = "proj">
+          <img src="{%static 'img/logo_no_back.gif' %}"  alt="Project logo"/>
+        </p>
+   </header>
+
+
+    <h1 style="color: yellow">Attedant's Name - needs to be according to ones in shift</h1>
+
+    <div class = "shift_details">
+        <h3 style="color: yellow">shift type , shift time, shift date , all from database </h3>
+        </div>
+    <table id="personal_display">
+        <tr>
+            <th>Destination</th>
+            <th>Flight Number</th>
+            <th>Boarding Time</th>
+            <th>Depature Time</th>
+            <th>Task</th>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+
+    </table>
+
+
+</body>
+
+    <footer>
+
+    </footer>
+
+</html>
+
+
+
+
+conn = mysql.connector.connect(host='localhost',
+                               database='ground_attendant',
+                               user='root',
+                               password='78583033k')
+
+
+-->

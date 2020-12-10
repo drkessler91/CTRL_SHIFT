@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html lang="en">
+{% load static %}
+
+<head>
+
+    <link rel="stylesheet"  type= "text/css" href="{% static 'css/login.css' %}" >
+
+    <link href="https://fonts.googleapis.com/css?family=Bowlby One SC" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" > <!-- intial-scale=1.0"> -->
+    <title>  CTRL SHIFT </title>
+
+</head>
+
+<body background ="{%static 'img/dimaa_shkofa2.gif' %}" alt="back">
+    <header>
+          Welcome!
+          <p class = "proj">
+
+            <img src="{%static 'img/logo_no_back.gif' %}" alt="Project logo">
+          </p>
+     </header>
+
+        <p class = "describe">
+        A Flight Attendants Scheduler
+        <br> <br>
+    </p>
+
+
+    <form  method="post"  action = "/shift/">
+        {% csrf_token %}
+<table>
+        {{ form.as_table }}
+    </table>
+          <button type="submit">Login</button>
+
+      </form>
+
+
+</body>
+
+    <footer>
+
+
+        <br>
+    </footer>
+
+ </html>
+

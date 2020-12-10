@@ -1,0 +1,50 @@
+header{
+    text-align: left;
+    color: white;
+    font-family: "Bowlby One SC";
+    font-size:60px;
+    margin:15px auto auto 10px;
+    float: none;
+
+}
+
+body{
+    background-size: 100%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+
+}
+
+.proj{
+    image-rendering: auto;
+    margin: -5px auto 50px;
+    float: right;
+    color:blue;
+}
+
+
+/* shift details */
+.shift_details{
+    margin-left: 15px;
+    font-family: "Archivo Black";
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    color: yellow;
+ }
+
+
+
+tr:nth-child {
+    background-color: #dddddd;
+}
+
+/* shift display table */
+#personal_display{
+    color:white;
+    background-color: rgb(202, 127, 108);
+    font-family: "Archivo Black";
+}
