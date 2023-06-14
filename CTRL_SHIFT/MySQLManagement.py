@@ -11,7 +11,7 @@ class MySQLManagement(DataBaseManagementInterface.DataBaseManagementInterface):
         self.conn = mysql.connector.connect(host='localhost',
                                             database='ground_attendant',
                                             user='root',
-                                            password='78583033k')
+                                            password='7********k')
 
     def create_data_base_cursor(self, buffered: bool):
         return self.conn.cursor(buffered)
